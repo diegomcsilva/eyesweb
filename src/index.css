@@ -61,3 +61,29 @@ body {
 main {
   margin: 50px;
 }
+
+@keyframes App-logo-spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+  
+  
+/* width */
+::-webkit-scrollbar {
+	width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #1bdbea;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #0a828b;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background:#126c72;
+}
