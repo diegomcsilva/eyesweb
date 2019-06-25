@@ -14,22 +14,30 @@ const BgDinamic = styled.div`
     margin: 0 auto;
 `;
 
-const BgDesktopTag = styled.img`
+const BgDesktopTag = styled.div`
     position: absolute;
     left: 0;
     right: 0;
     top: 30px;
     width: 100%;
+    height: 100%;
     max-width: 850px;
     margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(${bgDesktop});
 `;
 
-const BgMobileTag = styled.img`
+const BgMobileTag = styled.div`
     position: absolute;
     right: 160px;
     top: 10px;
     width: 100%;
+    height: 100%;
     max-width: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(${bgMobile});
 `;
 
 
@@ -37,8 +45,8 @@ class About extends Component {
     render() {
         return (
             <BgDinamic>
-                <BgDesktopTag src={bgDesktop} alt="bgDesktop" />
-                <BgMobileTag src={bgMobile} alt="bgMobile" />
+                <BgDesktopTag className="bgDesktop" />
+                <BgMobileTag className="bgMobile" />
             </BgDinamic>
         );
     }
