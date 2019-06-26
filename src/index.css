@@ -59,7 +59,13 @@ body {
 }
 
 main {
-  margin: 50px;
+	margin: 80px;
+}
+
+@media (max-width: 768px) {
+	main {
+		margin: 50px;
+	}
 }
 
 @keyframes App-logo-spin {
@@ -86,4 +92,23 @@ main {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 	background:#126c72;
+}
+
+.originActive {
+	top: 60px !important;
+    right: 10px !important;
+}
+
+.originClassDefault::before {
+	transform: rotate(45deg);
+	width: 20px !important;
+	bottom: 14px !important;
+	right: 5px !important;
+}
+
+.originClassDefault::after {
+	transform: rotate(-45deg);
+	width: 20px !important;
+	bottom: 14px !important;
+	right: 5px !important;
 }
