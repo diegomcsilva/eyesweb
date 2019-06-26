@@ -15,13 +15,15 @@ const IconCircle = styled.div`
     border-radius: 50%;
     background: #C4C4C4;
     position: absolute;
+    z-index: 0;
+    transition: ease all 0.8s;
 
     ${props => props.hover && css` 
         &:hover {
             width: 200px;
             margin-left: -150px;
             background: transparent;
-            transition: width ease 1s, background ease 1s,  margin-left ease 1s;
+            transition: ease all 0.8s;
 
             a {
                 position: absolute;
@@ -29,6 +31,7 @@ const IconCircle = styled.div`
                 top: 8px;
                 color: black;
                 font-size: 14px;
+                transition: ease all 0.8s;
             }
         }
     `}
@@ -37,6 +40,35 @@ const IconCircle = styled.div`
         background: #000000;
         right: 10px;
         bottom: 10px;
+        z-index: 1;
+        cursor: pointer;
+        transition: ease all 0.5s;
+
+        &::before {
+            content: '';
+            width: 13px;
+            height: 2px;
+            background: white;
+            position: absolute;
+            bottom: 18px;
+            right: 8px;
+            transition: ease all 0.8s;
+        }
+
+        &::after {
+            content: '';
+            width: 18px;
+            height: 2px;
+            background: white;
+            position: absolute;
+            bottom: 10px;
+            right: 6px;
+            transition: ease all 0.8s;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
     `}
 
     ${props => props.primary && css`
@@ -45,29 +77,43 @@ const IconCircle = styled.div`
     `}
 
     ${props => props.second && css`
-        bottom: 50px;
-        left: 20px;
+        top: 20px;
+        right: 50px;
     `}
 
     ${props => props.third && css`
-        bottom: 10px;
-        left: 0;
+        top: 60px;
+        right: 70px;
     `}
 `;
 
 
 class Nav extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            originClass: 'originActive',
+            originClassDefault: ''
+        }
+
+        this.activeClassOrigin = this.activeClassOrigin.bind(this);
+    }
+    
+    activeClassOrigin() {
+        this.state.originClass === 'origenDeactive' ? this.setState({ originClass: 'originActive', originClassDefault: '' }) : this.setState({ originClass: 'origenDeactive', originClassDefault: 'originClassDefault' })
+    }
+
     render() {
         return (
             <Navigator>
-                <IconCircle default></IconCircle>
-                <IconCircle hover primary>
+                <IconCircle default onClick={this.activeClassOrigin} className={this.state.originClassDefault}></IconCircle>
+                <IconCircle hover primary className={this.state.originClass}>
                     <Link to="/About">About</Link>
                 </IconCircle >
-                <IconCircle hover second>
+                <IconCircle hover second className={this.state.originClass}>
                     <Link to="/Portfolio">Portfolio</Link>
                 </IconCircle>
-                <IconCircle hover third>
+                <IconCircle hover third className={this.state.originClass}>
                     <Link to="/Contact">Contact</Link>
                 </IconCircle>
             </Navigator>
