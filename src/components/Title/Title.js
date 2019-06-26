@@ -13,6 +13,7 @@ const TitleContent = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    z-index: 1;
 `;
 
 const TitleH1 = styled.h1`
@@ -20,6 +21,10 @@ const TitleH1 = styled.h1`
     line-height: 178px;
     letter-spacing: 0.02em;
     color: #000000;
+
+    @media (max-width: 768px) {
+        font-size: 45px;
+    }
 `;
 
 const TitleSub = styled.p`

@@ -26,6 +26,10 @@ const BgDesktopTag = styled.div`
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url(${bgDesktop});
+
+    @media (max-width: 768px) {
+        top: 25%;
+    }
 `;
 
 const BgMobileTag = styled.div`
@@ -38,6 +42,11 @@ const BgMobileTag = styled.div`
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url(${bgMobile});
+
+    @media (max-width: 768px) {
+        right: 0;
+        top: 60px;
+    }
 `;
 
 

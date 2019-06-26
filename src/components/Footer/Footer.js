@@ -6,7 +6,8 @@ import Nav from '../Nav/Nav'
 const NavFooter = styled.footer`
     position: fixed;
     right: 0;
-    bottom: 0;
+    bottom: 0;    
+    z-index: 2;
 `;
 
 class Footer extends Component {
