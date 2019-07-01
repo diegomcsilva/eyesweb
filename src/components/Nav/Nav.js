@@ -2,33 +2,47 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css }  from 'styled-components';
 
+import iconContact from './images/icon-contact.png';
+import iconMe from './images/icon-me.png';
+import iconPortfolio from './images/icon-portfolio.png';
+
 const Navigator = styled.nav`
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
+`;
+
+const Image = styled.img`
+
 `;
 
 const IconCircle = styled.div`
     font-size: 0;
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: #C4C4C4;
     position: absolute;
     z-index: 0;
     transition: ease all 0.8s;
 
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+    }
+
     ${props => props.hover && css` 
         &:hover {
-            width: 200px;
-            margin-left: -150px;
-            background: transparent;
+            width: 100%;
+            border-radius: 0;
+            z-index: 1;
             transition: ease all 0.8s;
 
             a {
                 position: absolute;
-                right: 0;
-                top: 8px;
+                right: 10px;
                 color: black;
                 font-size: 14px;
                 transition: ease all 0.8s;
@@ -50,18 +64,18 @@ const IconCircle = styled.div`
             height: 2px;
             background: white;
             position: absolute;
-            bottom: 18px;
-            right: 8px;
+            bottom: 24px;
+            right: 16px;
             transition: ease all 0.8s;
         }
 
         &::after {
             content: '';
-            width: 18px;
+            width: 24px;
             height: 2px;
             background: white;
             position: absolute;
-            bottom: 10px;
+            bottom: 15px;
             right: 6px;
             transition: ease all 0.8s;
         }
@@ -74,16 +88,19 @@ const IconCircle = styled.div`
     ${props => props.primary && css`
         top: 0;
         right: 10px;
+        background-color: #F0CE9B;
     `}
 
     ${props => props.second && css`
-        top: 20px;
-        right: 50px;
+        top: 38px;
+        right: 40px;
+        background-color: #9D81D9;
     `}
 
     ${props => props.third && css`
-        top: 60px;
+        top: 75px;
         right: 70px;
+        background-color: #A6E092;
     `}
 `;
 
@@ -92,15 +109,15 @@ class Nav extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            originClass: 'originActive',
-            originClassDefault: ''
+            originClass: 'origenDeactive',
+            originClassDefault: 'originClassDefault'
         }
 
         this.activeClassOrigin = this.activeClassOrigin.bind(this);
     }
     
     activeClassOrigin() {
-        this.state.originClass === 'origenDeactive' ? this.setState({ originClass: 'originActive', originClassDefault: '' }) : this.setState({ originClass: 'origenDeactive', originClassDefault: 'originClassDefault' })
+        this.state.originClass === 'originActive' ? this.setState({ originClass: 'origenDeactive', originClassDefault: '' }) : this.setState({ originClass: 'originActive', originClassDefault: 'originClassDefault' })
     }
 
     render() {
@@ -108,13 +125,13 @@ class Nav extends Component {
             <Navigator>
                 <IconCircle default onClick={this.activeClassOrigin} className={this.state.originClassDefault}></IconCircle>
                 <IconCircle hover primary className={this.state.originClass}>
-                    <Link to="/About">About</Link>
+                    <Link to="/About"><Image src={iconMe} />About</Link>
                 </IconCircle >
                 <IconCircle hover second className={this.state.originClass}>
-                    <Link to="/Portfolio">Portfolio</Link>
+                    <Link to="/Portfolio"><Image src={iconPortfolio} />Portfolio</Link>
                 </IconCircle>
                 <IconCircle hover third className={this.state.originClass}>
-                    <Link to="/Contact">Contact</Link>
+                    <Link to="/Contact"><Image src={iconContact} />Contact</Link>
                 </IconCircle>
             </Navigator>
         );

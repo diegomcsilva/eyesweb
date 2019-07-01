@@ -95,20 +95,21 @@ main {
 }
 
 .originActive {
-	top: 60px !important;
-    right: 10px !important;
+	top: 75px !important;
+  right: 10px !important;
 }
 
 .originClassDefault::before {
 	transform: rotate(45deg);
 	width: 20px !important;
-	bottom: 14px !important;
-	right: 5px !important;
+	bottom: 18px !important;
+	right: 10px !important;
 }
 
 .originClassDefault::after {
 	transform: rotate(-45deg);
 	width: 20px !important;
-	bottom: 14px !important;
-	right: 5px !important;
+	bottom: 18px !important;
+	right: 10px !important;
 }
+
