@@ -163,7 +163,8 @@ class Portfolio extends Component {
             this.setState({ 
                 index: this.state.index - 1, 
                 caseDefaultMob: this.state.cases[this.state.index - 1].imageMob,
-                caseDefaultDesk: this.state.cases[this.state.index - 1].imageDesk 
+                caseDefaultDesk: this.state.cases[this.state.index - 1].imageDesk,
+                linkDefault: this.state.cases[this.state.index - 1].link 
             });
         } 
     }
@@ -176,7 +177,8 @@ class Portfolio extends Component {
                 index: this.state.index + 1, 
 
                 caseDefaultMob: this.state.cases[this.state.index + 1].imageMob,
-                caseDefaultDesk: this.state.cases[this.state.index + 1].imageDesk 
+                caseDefaultDesk: this.state.cases[this.state.index + 1].imageDesk,
+                linkDefault: this.state.cases[this.state.index + 1].link 
             });
         }
 
