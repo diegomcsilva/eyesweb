@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css }  from 'styled-components';
 
@@ -100,38 +100,29 @@ const IconCircle = styled.div`
     `}
 `;
 
+const Nav = () => {
+    const [buttonActive, setButtonActive] = useState(true);
 
-class Nav extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            originClass: 'origenDeactive',
-            originClassDefault: 'originClassDefault'
-        }
-
-        this.activeClassOrigin = this.activeClassOrigin.bind(this);
-    }
-    
-    activeClassOrigin() {
-        this.state.originClass === 'originActive' ? this.setState({ originClass: 'origenDeactive', originClassDefault: '' }) : this.setState({ originClass: 'originActive', originClassDefault: 'originClassDefault' })
+    const activeClassOrigin = () => {
+        setButtonActive(!buttonActive)
     }
 
-    render() {
-        return (
+    return (
+        <Navigator data-active={buttonActive}>
+            <IconCircle default onClick={activeClassOrigin} className="circleDefault"></IconCircle>
             <Navigator>
-                <IconCircle default onClick={this.activeClassOrigin} className={this.state.originClassDefault}></IconCircle>
-                <IconCircle hover primary className={this.state.originClass}>
+                <IconCircle hover primary className="circleButton">
                     <Link to="/About"><img src={iconMe} />About</Link>
                 </IconCircle >
-                <IconCircle hover second className={this.state.originClass}>
+                <IconCircle hover second className="circleButton">
                     <Link to="/Portfolio"><img src={iconPortfolio} />Portfolio</Link>
                 </IconCircle>
-                <IconCircle hover third className={this.state.originClass}>
+                <IconCircle hover third className="circleButton">
                     <Link to="/Contact"><img src={iconContact} />Contact</Link>
                 </IconCircle>
             </Navigator>
-        );
-    }
+        </Navigator>
+    );
 }
 
 export default Nav

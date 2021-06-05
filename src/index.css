@@ -88,19 +88,19 @@ main {
 	background:#126c72;
 }
 
-.originActive {
+[data-active="false"] .circleButton {
 	top: 75px !important;
   right: 10px !important;
 }
 
-.originClassDefault::before {
+[data-active="true"]  .circleDefault::before {
 	transform: rotate(45deg);
 	width: 20px !important;
 	bottom: 18px !important;
 	right: 10px !important;
 }
 
-.originClassDefault::after {
+[data-active="true"]  .circleDefault::after {
 	transform: rotate(-45deg);
 	width: 20px !important;
 	bottom: 18px !important;
