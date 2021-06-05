@@ -11,10 +11,6 @@ const Navigator = styled.nav`
     height: 125px;
 `;
 
-const Image = styled.img`
-
-`;
-
 const IconCircle = styled.div`
     font-size: 0;
     display: block;
@@ -125,13 +121,13 @@ class Nav extends Component {
             <Navigator>
                 <IconCircle default onClick={this.activeClassOrigin} className={this.state.originClassDefault}></IconCircle>
                 <IconCircle hover primary className={this.state.originClass}>
-                    <Link to="/About"><Image src={iconMe} />About</Link>
+                    <Link to="/About"><img src={iconMe} />About</Link>
                 </IconCircle >
                 <IconCircle hover second className={this.state.originClass}>
-                    <Link to="/Portfolio"><Image src={iconPortfolio} />Portfolio</Link>
+                    <Link to="/Portfolio"><img src={iconPortfolio} />Portfolio</Link>
                 </IconCircle>
                 <IconCircle hover third className={this.state.originClass}>
-                    <Link to="/Contact"><Image src={iconContact} />Contact</Link>
+                    <Link to="/Contact"><img src={iconContact} />Contact</Link>
                 </IconCircle>
             </Navigator>
         );
