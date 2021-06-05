@@ -112,13 +112,13 @@ const Nav = () => {
             <IconCircle default onClick={activeClassOrigin} className="circleDefault"></IconCircle>
             <Navigator>
                 <IconCircle hover primary className="circleButton">
-                    <Link to="/About"><img src={iconMe} />About</Link>
+                    <Link to="/About"><img src={iconMe} alt="About" />About</Link>
                 </IconCircle >
                 <IconCircle hover second className="circleButton">
-                    <Link to="/Portfolio"><img src={iconPortfolio} />Portfolio</Link>
+                    <Link to="/Portfolio"><img src={iconPortfolio} alt="Portfolio" />Portfolio</Link>
                 </IconCircle>
                 <IconCircle hover third className="circleButton">
-                    <Link to="/Contact"><img src={iconContact} />Contact</Link>
+                    <Link to="/Contact"><img src={iconContact} alt="Contact"/>Contact</Link>
                 </IconCircle>
             </Navigator>
         </Navigator>
