@@ -41,7 +41,7 @@ class Title extends Component {
         return (
             <TitleContent>
                 <TitleH1>EYESWEB</TitleH1>
-                <TitleSub>Desenvolvimento web</TitleSub>
+                <TitleSub>Developer</TitleSub>
             </TitleContent>
         );
     }
