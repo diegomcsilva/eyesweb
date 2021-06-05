@@ -1,6 +1,7 @@
 {
-  "name": "eyesweb",
+  "name": "Eyesweb",
   "version": "0.1.0",
+  "description": "My portfolio",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
