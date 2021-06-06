@@ -4,7 +4,7 @@
   "description": "My portfolio",
   "private": true,
   "dependencies": {
-    "immer": "1.10.0",
+    "immer": "^8.0.1",
     "postcss": "^8.3.0",
     "react": "^16.8.6",
     "react-dev-utils": "^10.2.1",
@@ -19,5 +19,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
