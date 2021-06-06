@@ -4,7 +4,7 @@
   "description": "My portfolio",
   "private": true,
   "dependencies": {
-    "immer": "1.10.0",
+    "immer": "8.0.1",
     "postcss": "^8.3.0",
     "react": "^16.8.6",
     "react-dev-utils": "^10.2.1",
