@@ -5,7 +5,7 @@
   "private": false,
   "license": "UNLICENSED",
   "dependencies": {
-    "immer": ">=8.0.1",
+    "immer": ">=9.0.6",
     "node-notifier": "^8.0.1",
     "postcss": ">=8.2.10",
     "react": "^16.8.6",
